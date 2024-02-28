@@ -14,11 +14,13 @@
   "dependencies": {
     "@fastify/env": "^3.0.0",
     "@fastify/postgres": "^5.2.2",
+    "@prisma/client": "^5.10.2",
     "dotenv": "^16.4.5",
     "fastify": "^4.26.1",
     "fastify-swagger": "^5.2.0",
     "nodemon": "^3.1.0",
     "pg": "^8.11.3",
+    "prisma": "^5.10.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
     "uuid": "^9.0.1"

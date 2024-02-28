@@ -1,6 +1,5 @@
 const BASE_URL = "http://127.0.0.1:5000";
 
-// Function to fetch all todos
 export const fetchTodos = async (): Promise<Todo[]> => {
   try {
     const response = await fetch(`${BASE_URL}/todos`);
@@ -10,11 +9,10 @@ export const fetchTodos = async (): Promise<Todo[]> => {
     return await response.json();
   } catch (error) {
     console.error("Error fetching todos:", error);
-    throw error; // Re-throw the error to handle it elsewhere
+    throw error;
   }
 };
 
-// Function to create a new todo
 export const createTodo = async (newTodo: NewTodo): Promise<void> => {
   try {
     const response = await fetch(`${BASE_URL}/todos`, {
@@ -33,7 +31,6 @@ export const createTodo = async (newTodo: NewTodo): Promise<void> => {
   }
 };
 
-// Function to delete a todo by id
 export const deleteTodo = async (id: number): Promise<void> => {
   try {
     const response = await fetch(`${BASE_URL}/todos/${id}`, {
@@ -48,7 +45,6 @@ export const deleteTodo = async (id: number): Promise<void> => {
   }
 };
 
-// Function to update a todo by id
 export const updateTodo = async (id: number, updatedName: string): Promise<void> => {
   try {
     const response = await fetch(`${BASE_URL}/todos/${id}`, {
@@ -56,7 +52,7 @@ export const updateTodo = async (id: number, updatedName: string): Promise<void>
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name: updatedName }), // Send only the updated name
+      body: JSON.stringify({ name: updatedName }),
     });
     if (!response.ok) {
       throw new Error("Failed to update todo");
