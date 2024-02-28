@@ -1,0 +1,3 @@
+type NewTodo = {
+  name: string;
+};
